@@ -1,0 +1,68 @@
+#: import hex kivy.utils.get_color_from_hex 
+
+<Tab>
+    MDLabel:
+        id: label
+        text: "Tab 0"
+        halign: "center"
+
+
+MDBoxLayout:
+    orientation: 'vertical'
+
+    MDToolbar:
+        title: "WhatsApp"
+        right_action_items: [ ['magnify', lambda x: print("magnify")], ['message-reply-text', lambda x: print('chat')], ['dots-vertical', lambda x: print('dots-vertical')] ]
+        md_bg_color: hex("#075e54")
+    MDTabs:
+        id: tabs
+        on_tab_switch: app.on_tab_switch(*args)
+        tab_hint_x: True
+        pos_hint: {'right':1}
+        background_color: hex("#075e54")
+        Tab:
+            text: "DISCUSSION"
+            ScrollView:
+                MDList:
+                    TwoLineAvatarIconListItem:
+                        text: "B. Macron"
+                        secondary_text: "salut comment tu vas?"
+
+                        IconLeftWidget:
+                            icon: "nice1.jpg"
+                    TwoLineAvatarIconListItem:
+                        text: "Ninan"
+                        secondary_text: "je regarde supernatural "
+
+                        IconLeftWidget:
+                            icon: "nice2.jpg"
+                    TwoLineAvatarIconListItem:
+                        text: "+225 0102030405"
+                        secondary_text: "salut "
+
+                        IconLeftWidget:
+                            icon: "nice3.jpg"
+                    TwoLineAvatarIconListItem:
+                        text: "Martin"
+                        secondary_text: "je regarde supernatural "
+
+                        IconLeftWidget:
+                            icon: "nice4.jpeg"
+                    TwoLineAvatarIconListItem:
+                        text: "Azzez"
+                        secondary_text: "je regarde supernatural "
+
+                        IconLeftWidget:
+                            icon: "nice5.jpg"
+        Tab:
+            text: "STATUT"
+        Tab:
+            text: "APPELS"
+
+
+            
+        
+
+
+
+        
